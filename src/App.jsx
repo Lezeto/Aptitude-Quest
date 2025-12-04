@@ -4,7 +4,7 @@ import deportistaImg from "./deportista.png";
 import abogadoImg from "./abogado.png";
 import empresarioImg from "./empresario.png";
 import sacerdoteImg from "./sacerdote.png";
-import policiaImg from "./policia.png";
+import policiaImg from "./policia.png"; 
 
 import gemImg from "./gem.png";
 import swordImg from "./sword.png";
@@ -61,7 +61,7 @@ export default function Game() {
     Policia: policiaImg,
   };
 
-  const missionTypes = ["Robo", "Asesinato", "Redada", "Estafa", "Contrabando"];
+  const missionTypes = ["Emprendimiento", "Voluntariado", "Proyecto", "Investigación", "Capacitación"];
   const difficulties = [
     { name: "Simple", req: 0, time: 5000, success: 0.9, damage: 20, exp: 20, lootChance: 0.3 },
     { name: "Normal", req: 5, time: 8000, success: 0.8, damage: 30, exp: 50, lootChance: 0.4 },
@@ -324,18 +324,18 @@ export default function Game() {
         <h1 className="titulo">Elige tu profesión</h1>
         <p className="descripcion">
           Bienvenido a la versión inicial de Profesión Mafia.
-          Elige tu profesión favorita y sube de nivel para cometer crímenes más complejos.
+          En este juego simulas ser una de las cinco profesiones disponibles y te desempeñas en el mundo laboral como si fuera un RPG de combate.
           Puedes desarrollar distintas aptitudes: Fuerza, Coartada, Activos, Información o Patrullaje.
           Al comenzar, cada profesión tiene 10 puntos en una aptitud específica: el deportista en Fuerza, el abogado en Coartada, el empresario en Activos, el sacerdote en Información y el policía en Patrullaje.<br />
-          Algunos crímenes requieren cierto nivel de aptitud, por lo que no podrás realizarlos todos desde el inicio.
-          Los crímenes simples se pueden hacer de inmediato, mientras que otros exigen niveles mayores.
-          Si no puedes realizar un crimen, puedes dejarlo para después o cancelarlo.<br />
-          Puedes tener hasta 5 crímenes activos, y si te faltan, aparecerá uno nuevo cada 12 segundos.<br />
-          Cada crimen tiene una probabilidad de éxito. Si lo completas, ganas experiencia; si fallas, pierdes vida.
+          Algunas actividades requieren cierto nivel de aptitud, por lo que no podrás realizarlas todas desde el inicio.
+          Las actividades simples se pueden hacer de inmediato, mientras que otras exigen niveles mayores.
+          Si no puedes realizar una actividad, puedes dejarla para después o cancelarla.<br />
+          Puedes tener hasta 5 actividades activas, y si te faltan, aparecerá una nueva cada 12 segundos.<br />
+          Cada actividad tiene una probabilidad de éxito. Si la completas, ganas experiencia; si fallas, pierdes vida.
           La vida se recupera gradualmente, 5 puntos cada 10 segundos.<br />
-          Los crímenes más difíciles toman más tiempo, son más riesgosos y hacen perder más vida si fallan, pero dan más experiencia al tener éxito.<br />
+          Las actividades más difíciles toman más tiempo, son más exigentes y hacen perder más vida si fallas, pero dan más experiencia al tener éxito.<br />
           Al subir de nivel, obtienes 5 puntos para mejorar tus aptitudes a tu gusto.<br />
-          El objetivo actual es alcanzar 10 en cada aptitud para poder realizar todos los crímenes que quieras. Se pierde si tu vida llega a 0.<br />
+          El objetivo actual es alcanzar 10 en cada aptitud para poder realizar todas las actividades que quieras. Se pierde si tu vida llega a 0.<br />
         </p>
         <div className="professions">
           {Object.keys(professions).map((p) => (
@@ -458,7 +458,7 @@ export default function Game() {
         </div>
       </div>
 
-      <h2>Crímenes</h2>
+      <h2>Actividades</h2>
       <div className="missions">
         {missions.map((m) => (
           <div key={m.id} className="mission">
