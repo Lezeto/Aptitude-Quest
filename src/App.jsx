@@ -19,6 +19,14 @@ import bookImg from "./book.png";
 
 
 export default function Game() {
+  // Nombres mostrados en la UI (sin cambiar la lógica interna)
+  const statLabels = {
+    fuerza: "Salud",
+    coartada: "Carisma",
+    activos: "Liderazgo",
+    informacion: "Inteligencia",
+    patrullaje: "Suerte",
+  };
 
   const items = [
     { id: 1, name: "Gem", img: gemImg },
@@ -321,12 +329,12 @@ export default function Game() {
   if (!profession) {
     return (
       <div className="game">
-        <h1 className="titulo">Elige tu profesión</h1>
+        <h1 className="titulo">Aptitude-Quest: Elige tu profesión</h1>
         <p className="descripcion">
-          Bienvenido a la versión inicial de Profesión Mafia.
+          Bienvenido a Aptitude-Quest.
           En este juego simulas ser una de las cinco profesiones disponibles y te desempeñas en el mundo laboral como si fuera un RPG de combate.
-          Puedes desarrollar distintas aptitudes: Fuerza, Coartada, Activos, Información o Patrullaje.
-          Al comenzar, cada profesión tiene 10 puntos en una aptitud específica: el deportista en Fuerza, el abogado en Coartada, el empresario en Activos, el sacerdote en Información y el policía en Patrullaje.<br />
+          Puedes desarrollar distintas aptitudes: Inteligencia, Carisma, Liderazgo, Suerte y Salud.
+          Al comenzar, cada profesión tiene 10 puntos en su aptitud principal.<br />
           Algunas actividades requieren cierto nivel de aptitud, por lo que no podrás realizarlas todas desde el inicio.
           Las actividades simples se pueden hacer de inmediato, mientras que otras exigen niveles mayores.
           Si no puedes realizar una actividad, puedes dejarla para después o cancelarla.<br />
@@ -379,7 +387,7 @@ export default function Game() {
 
           {Object.keys(stats).map((s) => (
             <div key={s} className="bar-container">
-              <label>{s}:</label>
+              <label>{statLabels[s]}:</label>
               <div className="bar-background">
                 <div className="bar stat-bar" style={{ width: `${(stats[s] / MAX_STAT) * 100}%` }} />
               </div>
